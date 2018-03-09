@@ -1,0 +1,19 @@
+{
+  "name": "room-occupancy-tdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://anthony0030@github.com/anthony0030/room-occupancy-tdd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anthony0030/room-occupancy-tdd/issues"
+  },
+  "homepage": "https://github.com/anthony0030/room-occupancy-tdd#readme"
+}
