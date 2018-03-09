@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/anthony0030/room-occupancy-tdd/issues"
   },
-  "homepage": "https://github.com/anthony0030/room-occupancy-tdd#readme"
+  "homepage": "https://github.com/anthony0030/room-occupancy-tdd#readme",
+  "dependencies": {
+    "mocha": "^5.0.4"
+  }
 }
