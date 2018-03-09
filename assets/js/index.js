@@ -1,3 +1,3 @@
-function Occupancy(){
-  return {}
+function Occupancy(rooms){
+  this.list = rooms;
 }
