@@ -6,7 +6,6 @@ function Occupancy(rooms){
 }
 
 Occupancy.prototype._biggestRoom = function(){
-  let biggestRoomTemp = [];
   let biggestRoomIndex = 0;
   let biggestRoomsize = this._totalPeople(this.list[0])
 
