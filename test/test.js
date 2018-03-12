@@ -27,6 +27,12 @@ describe('Occupancy', function() {
       assert.deepEqual(occupancies._biggestRoom(), [2,10])
     })
   })
+  describe('#_mostAdultsWithMostChildrenRoom()', function(){
+    var occupancies = new Occupancy(rooms)
+    it('returns array of room occupancy with most adults and most children', function(){
+      assert.deepEqual(occupancies._mostAdultsWithMostChildrenRoom(), [8,1])
+    })
+  })
   describe('#_totalPeople', function(){
     var occupancies = new Occupancy(rooms)
     it('returns the sum of people in a room', function(){
