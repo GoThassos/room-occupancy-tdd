@@ -2,6 +2,7 @@ function Occupancy(rooms){
   this.list = rooms || [[0,0]];
   this.maxPeople = this._maxPeople();
   this.maxAdultsBiggestRoom = this._biggestRoom()[0];
+  this.maxChildrenBiggestRoom = this._biggestRoom()[1];
 }
 
 Occupancy.prototype._biggestRoom = function(){
