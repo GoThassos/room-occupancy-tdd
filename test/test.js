@@ -16,9 +16,14 @@ describe('Occupancy', function() {
     assert.equal(occupancies instanceof Occupancy, true)
   })
   describe('#list', function(){
-    it('returns the initial room occupancies', function(){
-      var occupancies = new Occupancy(rooms)
-      assert.deepEqual(occupancies.list, rooms)
+    var occupancies = new Occupancy(rooms)
+    it('returns the initial room occupancies (with children defined)', function(){
+      assert.deepEqual(occupancies.list, [[6,2],[7,0],[8,0],[6,3],[2,10],[8,1],[8,0]])
+    })
+    describe('#_list()', function(){
+      it('has private method that adds zero children to array if none defined', function(){
+        assert.deepEqual(occupancies._list(rooms), [[6,2],[7,0],[8,0],[6,3],[2,10],[8,1],[8,0]])
+      })
     })
   })
   describe('#_biggestRoom()', function(){
