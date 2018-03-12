@@ -74,3 +74,24 @@ Occupancy.prototype.updateChildrenMax = function(adults_selected){
       return max_people - adults_selected;
   }
 }
+
+Occupancy.prototype.updateAdultsMax = function(children_selected){
+  let max_adults = this.maxAdultsRoomMostAdults;
+  let max_children_most_adults = this.maxChildrenRoomMostAdults;
+  let max_adults_largest_room = this.maxAdultsBiggestRoom;
+  let max_children_largest_room = this.maxChildrenBiggestRoom;
+
+  if(children_selected == 0)
+    return max_adults;
+
+  if(children_selected > 0){
+    if(children_selected < (max_children_most_adults + max_adults))
+      return max_adults + max_children_most_adults - children_selected;
+    
+    if(children_selected > (max_children_most_adults + max_adults))
+      return max_adults_largest_room + max_children_largest_room - children_selected;
+
+    if(children_selected == (max_children_most_adults + max_adults))
+      return max_adults_largest_room;
+  }
+}

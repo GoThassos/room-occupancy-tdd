@@ -135,4 +135,42 @@ describe('Occupancy Logic', function(){
       })
     })
   })
+  describe('#updateAdultMax()', function(){
+    it('when 0 children selected, set max adult to 8', function(){
+      assert.equal(occupancies.updateAdultsMax(0), 8)
+    })
+    it('when 1 children selected, set max adult to 8', function(){
+      assert.equal(occupancies.updateAdultsMax(1), 8)
+    })
+    it('when 2 children selected, set max adult to 7', function(){
+      assert.equal(occupancies.updateAdultsMax(2), 7)
+    })
+    it('when 3 children selected, set max adult to 6', function(){
+      assert.equal(occupancies.updateAdultsMax(3), 6)
+    })
+    it('when 4 children selected, set max adult to 5', function(){
+      assert.equal(occupancies.updateAdultsMax(4), 5)
+    })
+    it('when 5 children selected, set max adult to 4', function(){
+      assert.equal(occupancies.updateAdultsMax(5), 4)
+    })
+    it('when 6 children selected, set max adult to 3', function(){
+      assert.equal(occupancies.updateAdultsMax(6), 3)
+    })
+    it('when 7 children selected, set max adult to 2', function(){
+      assert.equal(occupancies.updateAdultsMax(7), 2)
+    })
+    it('when 8 children selected, set max adult to 1', function(){
+      assert.equal(occupancies.updateAdultsMax(8), 1)
+    })
+    it('when 9 children selected, set max adult 2', function(){
+      assert.equal(occupancies.updateAdultsMax(9), 2)
+    })
+    it('when 10 children selected, set max adult 2', function(){
+      assert.equal(occupancies.updateAdultsMax(10), 2)
+    })
+    it('when 11 children selected, set max adult 1', function(){
+      assert.equal(occupancies.updateAdultsMax(11), 1)
+    })
+  })
 })
