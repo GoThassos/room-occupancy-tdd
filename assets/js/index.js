@@ -3,7 +3,7 @@ function Occupancy(rooms){
   this.maxPeople = this._maxPeople();
 }
 
-Occupancy.prototype.biggestRoom = function(){
+Occupancy.prototype._biggestRoom = function(){
   let biggestRoomTemp = [];
   let biggestRoomIndex = 0;
   let biggestRoomsize = this._totalPeople(this.list[0])
@@ -25,5 +25,5 @@ Occupancy.prototype._totalPeople = function(room){
 }
 
 Occupancy.prototype._maxPeople = function(){
-  return this._totalPeople(this.biggestRoom());
+  return this._totalPeople(this._biggestRoom());
 }

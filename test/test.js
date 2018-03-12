@@ -21,10 +21,10 @@ describe('Occupancy', function() {
       assert.deepEqual(occupancies.list, rooms)
     })
   })
-  describe('#biggestRoom()', function(){
+  describe('#_biggestRoom()', function(){
     var occupancies = new Occupancy(rooms)
     it('returns array of room with biggest occupancy', function(){
-      assert.deepEqual(occupancies.biggestRoom(), [2,10])
+      assert.deepEqual(occupancies._biggestRoom(), [2,10])
     })
   })
   describe('#_totalPeople', function(){
