@@ -1,0 +1,60 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>User Testable Inputs</title>
+  <script src="/assets/js/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    * { font-size:26px}
+    input{ width: 200px; text-align: center }
+    span.max {font-size:20px}
+  </style>
+
+  <script>
+    $(document).ready(function(){
+      const roomArray = [
+        [6,2],
+        [7,0],
+        [8,0],
+        [6,3],
+        [2,10],
+        [8,1],
+        [8]
+      ]
+      
+      const occupancies = new Occupancy(roomArray)
+
+      const $adults = $('[name=adults]');
+      const $children = $('[name=children]');
+
+      $adults.attr('max', occupancies.maxAdultsInitial)
+      $children.attr('max', occupancies.maxChildrenInitial)
+
+      $adults.on('change', function(){
+        var updatedMax = occupancies.updateChildrenMax(this.value)
+        $children.attr('max', updatedMax)
+        $('.children.max').html("(" + updatedMax + " max)")
+      })
+
+      $children.on('change', function(){
+        var updatedMax = occupancies.updateAdultsMax(this.value)
+        $adults.attr('max', updatedMax)
+        $('.adults.max').html("(" + updatedMax + " max)")
+      })
+    })
+  </script>
+
+</head>
+<body>
+  <h2>Max Values for Rooms</h2>
+
+  <label for="adults">Adults <span class="adults max"></span></label>
+  <input type="number" name="adults" min="1" value="1">
+
+  <br>
+  <br>
+
+  <label for="children">Children <span class="children max"></span></label>
+  <input type="number" name="children" min= "0" value="0">
+</body>
+</html>
