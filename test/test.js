@@ -25,7 +25,9 @@ var testA = {
   maxAdultsBiggestRoom: 2,
   maxChildrenBiggestRoom: 10,
   maxAdultsRoomMostAdults: 8,
-  maxChildrenRoomMostAdults: 1
+  maxChildrenRoomMostAdults: 1,
+  maxAdultsInitial: 8,
+  maxChildrenInitial: 11,
 }
 
 var testB = {
@@ -45,7 +47,9 @@ var testB = {
   maxAdultsBiggestRoom: 6,
   maxChildrenBiggestRoom: 0,
   maxAdultsRoomMostAdults: 6,
-  maxChildrenRoomMostAdults: 0
+  maxChildrenRoomMostAdults: 0,
+  maxAdultsInitial: 6,
+  maxChildrenInitial: 5,
 }
 
 var testC = {
@@ -65,27 +69,9 @@ var testC = {
   maxAdultsBiggestRoom: 3,
   maxChildrenBiggestRoom: 0,
   maxAdultsRoomMostAdults: 3,
-  maxChildrenRoomMostAdults: 0
-}
-
-var testC = {
-  rooms: [
-    [1],
-    [2],
-    [3],
-  ],
-  cleanRooms: [
-    [1,0],
-    [2,0],
-    [3,0],
-  ],
-  biggestRoom: [3,0],
-  roomMostAdults: [3,0],
-  maxPeople: 3,
-  maxAdultsBiggestRoom: 3,
-  maxChildrenBiggestRoom: 0,
-  maxAdultsRoomMostAdults: 3,
-  maxChildrenRoomMostAdults: 0
+  maxChildrenRoomMostAdults: 0,
+  maxAdultsInitial: 3,
+  maxChildrenInitial: 2,
 }
 
 var testD = {
@@ -105,7 +91,9 @@ var testD = {
   maxAdultsBiggestRoom: 3,
   maxChildrenBiggestRoom: 0,
   maxAdultsRoomMostAdults: 3,
-  maxChildrenRoomMostAdults: 0
+  maxChildrenRoomMostAdults: 0,
+  maxAdultsInitial: 3,
+  maxChildrenInitial: 2,
 }
 
 const currentTest = testA;
@@ -181,6 +169,18 @@ describe('Occupancy', function() {
   describe('#_maxChildrenRoomMostAdults', function(){
     it('return the number of children of the room with most adults and most children as integer', function(){
       assert.equal(occupancies._maxChildrenRoomMostAdults, currentTest.maxChildrenRoomMostAdults)
+    })
+  })
+
+  describe('#maxAdultsInitial', function(){
+    it('return the max attribute value for the adults input field as integer', function(){
+      assert.equal(occupancies.maxAdultsInitial, currentTest.maxAdultsInitial)
+    })
+  })
+
+  describe('#maxChildrenInitial', function(){
+    it('return the max attribute value for the children input field as integer', function(){
+      assert.equal(occupancies.maxChildrenInitial, currentTest.maxChildrenInitial)
     })
   })
 

@@ -5,6 +5,9 @@ function Occupancy(rooms){
   this._maxChildrenBiggestRoom = this._biggestRoom()[1];
   this._maxAdultsRoomMostAdults = this._mostAdultsWithMostChildrenRoom()[0]
   this._maxChildrenRoomMostAdults = this._mostAdultsWithMostChildrenRoom()[1]
+
+  this.maxAdultsInitial = this._maxAdultsRoomMostAdults
+  this.maxChildrenInitial = this._maxPeople - 1
 }
 
 Occupancy.prototype._initializeList = function(rooms) {
