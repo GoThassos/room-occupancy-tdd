@@ -15,7 +15,7 @@ Occupancy.prototype._biggestRoom = function(){
       biggestRoomIndex = i;
     }
   }
-  return  this.list[biggestRoomIndex];
+  return this.list[biggestRoomIndex];
 }
 
 Occupancy.prototype._totalPeople = function(room){
