@@ -58,3 +58,19 @@ Occupancy.prototype._totalPeople = function(room){
 Occupancy.prototype._maxPeople = function(){
   return this._totalPeople(this._biggestRoom());
 }
+
+Occupancy.prototype.updateChildrenMax = function(adults_selected){
+  let max_adults = this.maxAdultsRoomMostAdults;
+  let max_children_most_adults = this.maxChildrenRoomMostAdults;
+  let max_adults_largest_room = this.maxAdultsBiggestRoom;
+  let max_people = this.maxPeople;
+
+  if(adults_selected == max_adults)
+    return max_adults - adults_selected + max_children_most_adults;
+  else {
+    if(max_adults_largest_room < adults_selected)
+      return max_adults - adults_selected + max_children_most_adults;
+    else
+      return max_people - adults_selected;
+  }
+}

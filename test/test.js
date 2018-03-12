@@ -105,3 +105,34 @@ describe('Occupancy', function() {
   })
 
 })
+
+describe('Occupancy Logic', function(){
+  describe('#updateChildrenMax()', function(){
+    describe('returns the max number of children possible from the currently selected adults', function(){
+      it('when 1 adult selected, set max children to 11', function(){
+        assert.equal(occupancies.updateChildrenMax(1), 11)
+      })
+      it('when 2 adults selected, set max children to 10', function(){
+        assert.equal(occupancies.updateChildrenMax(2), 10)
+      })
+      it('when 3 adults selected, set max children to 6', function(){
+        assert.equal(occupancies.updateChildrenMax(3), 6)
+      })
+      it('when 4 adults selected, set max children to 5', function(){
+        assert.equal(occupancies.updateChildrenMax(4), 5)
+      })
+      it('when 5 adults selected, set max children to 4', function(){
+        assert.equal(occupancies.updateChildrenMax(5), 4)
+      })
+      it('when 6 adults selected, set max children to 3', function(){
+        assert.equal(occupancies.updateChildrenMax(6), 3)
+      })
+      it('when 7 adults selected, set max children to 2', function(){
+        assert.equal(occupancies.updateChildrenMax(7), 2)
+      })
+      it('when 8 adults selected, set max children to 1', function(){
+        assert.equal(occupancies.updateChildrenMax(8), 1)
+      })
+    })
+  })
+})
