@@ -118,14 +118,14 @@ describe('Occupancy', function() {
   })
 
 
-  describe('#list', function(){
+  describe('#_list', function(){
     it('returns the initial room occupancies (with children defined)', function(){
-      assert.deepEqual(occupancies.list, currentTest.cleanRooms)
+      assert.deepEqual(occupancies._list, currentTest.cleanRooms)
     })
 
-    describe('#_list()', function(){
+    describe('#_initializeList()', function(){
       it('has private method that adds zero children to array if none defined', function(){
-        assert.deepEqual(occupancies._list(currentTest.rooms), currentTest.cleanRooms)
+        assert.deepEqual(occupancies._initializeList(currentTest.rooms), currentTest.cleanRooms)
       })
     })
   })
@@ -148,39 +148,39 @@ describe('Occupancy', function() {
     })
   })
 
-  describe('#maxPeople', function(){
+  describe('#_maxPeople', function(){
     it('returns the max amount of peaple a room can hold as an integer', function(){
-      assert.equal(occupancies.maxPeople, currentTest.maxPeople)
+      assert.equal(occupancies._maxPeople, currentTest.maxPeople)
     })
 
-    describe('#_maxPeople()', function(){
+    describe('#_getMaxPeople()', function(){
       it('has private method that add values of biggest room array element', function(){
-        assert.equal(occupancies._maxPeople(), currentTest.maxPeople)
+        assert.equal(occupancies._getMaxPeople(), currentTest.maxPeople)
       })
     })
   })
 
-  describe('#maxAdultsBiggestRoom', function(){
+  describe('#_maxAdultsBiggestRoom', function(){
     it('return the number of adults of the largest room by occupancy as integer', function(){
-      assert.equal(occupancies.maxAdultsBiggestRoom, currentTest.maxAdultsBiggestRoom)
+      assert.equal(occupancies._maxAdultsBiggestRoom, currentTest.maxAdultsBiggestRoom)
     })
   })
 
-  describe('#maxChildrenBiggestRoom', function(){
+  describe('#_maxChildrenBiggestRoom', function(){
     it('return the number of children of the largest room by occupancy as integer', function(){
-      assert.equal(occupancies.maxChildrenBiggestRoom, currentTest.maxChildrenBiggestRoom)
+      assert.equal(occupancies._maxChildrenBiggestRoom, currentTest.maxChildrenBiggestRoom)
     })
   })
 
-  describe('#maxAdultsRoomMostAdults', function(){
+  describe('#_maxAdultsRoomMostAdults', function(){
     it('return the number of adults of the room with most adults and most children as integer', function(){
-      assert.equal(occupancies.maxAdultsRoomMostAdults, currentTest.maxAdultsRoomMostAdults)
+      assert.equal(occupancies._maxAdultsRoomMostAdults, currentTest.maxAdultsRoomMostAdults)
     })
   })
 
-  describe('#maxChildrenRoomMostAdults', function(){
+  describe('#_maxChildrenRoomMostAdults', function(){
     it('return the number of children of the room with most adults and most children as integer', function(){
-      assert.equal(occupancies.maxChildrenRoomMostAdults, currentTest.maxChildrenRoomMostAdults)
+      assert.equal(occupancies._maxChildrenRoomMostAdults, currentTest.maxChildrenRoomMostAdults)
     })
   })
 
