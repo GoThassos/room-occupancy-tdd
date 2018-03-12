@@ -6,12 +6,10 @@ function Occupancy(rooms){
 Occupancy.prototype.biggestRoom = function(){
   let biggestRoomTemp = [];
   let biggestRoomIndex = 0;
-  let biggestRoomsize = this.list[0].reduce(function(accumulator, currentValue){
-    return accumulator + currentValue
-  }, 0)
+  let biggestRoomsize = this._totalPeople(this.list[0])
 
   for(let i = 1; i < this.list.length; i++){
-    var currentRoom = this.list[i][0] + this.list[i][1]
+    var currentRoom = this._totalPeople(this.list[i])
     if(currentRoom > biggestRoomsize){
       biggestRoomsize = currentRoom;
       biggestRoomIndex = i;
@@ -22,11 +20,10 @@ Occupancy.prototype.biggestRoom = function(){
 
 Occupancy.prototype._totalPeople = function(room){
   return room.reduce(function(accumulator, currentValue){
-    return accumulator + currentValue
+    return accumulator + currentValue;
   }, 0)
 }
 
 Occupancy.prototype._maxPeople = function(){
-  var biggestRoom = this.biggestRoom()
-  return biggestRoom[0] + biggestRoom[1];
+  return this._totalPeople(this.biggestRoom());
 }
