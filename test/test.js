@@ -76,5 +76,12 @@ describe('Occupancy', function() {
       assert.equal(occupancies.maxChildrenBiggestRoom, 10)
     })
   })
+
+  describe('#maxAdultsRoomMostAdults', function(){
+    var occupancies = new Occupancy(rooms)
+    it('return the number of adults of the room with most adults and most children as integer', function(){
+      assert.equal(occupancies.maxAdultsRoomMostAdults, 8)
+    })
+  })
   
 })
