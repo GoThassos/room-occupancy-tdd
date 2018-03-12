@@ -28,14 +28,15 @@ var testA = {
   maxChildrenRoomMostAdults: 1
 }
 
+const currentTest = testA;
+const occupancies = new Occupancy(currentTest.rooms)
+
 describe('Occupancy', function() {
   it('occupancy object should exist', function(){
     var occupancies = new Occupancy
     assert.equal(occupancies instanceof Occupancy, true)
   })
 
-  const currentTest = testA;
-  const occupancies = new Occupancy(currentTest.rooms)
 
   describe('#list', function(){
     it('returns the initial room occupancies (with children defined)', function(){
