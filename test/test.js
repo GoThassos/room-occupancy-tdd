@@ -20,4 +20,10 @@ describe('Occupancy', function() {
       assert.deepEqual(occupancies.list, rooms)
     })
   })
+  describe('#occupancyTotals()', function(){
+    var occupancies = new Occupancy(rooms)
+    it('returns array with total occupancies', function(){
+      assert.deepEqual(occupancies.occupancyTotals(), [8,7,8,9,12,9])
+    })
+  })
 })
