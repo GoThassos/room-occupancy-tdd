@@ -28,6 +28,86 @@ var testA = {
   maxChildrenRoomMostAdults: 1
 }
 
+var testB = {
+  rooms: [
+    [2,1],
+    [2,2],
+    [6],
+  ],
+  cleanRooms: [
+    [2,1],
+    [2,2],
+    [6,0],
+  ],
+  biggestRoom: [6,0],
+  roomMostAdults: [6,0],
+  maxPeople: 6,
+  maxAdultsBiggestRoom: 6,
+  maxChildrenBiggestRoom: 0,
+  maxAdultsRoomMostAdults: 6,
+  maxChildrenRoomMostAdults: 0
+}
+
+var testC = {
+  rooms: [
+    [1],
+    [2],
+    [3],
+  ],
+  cleanRooms: [
+    [1,0],
+    [2,0],
+    [3,0],
+  ],
+  biggestRoom: [3,0],
+  roomMostAdults: [3,0],
+  maxPeople: 3,
+  maxAdultsBiggestRoom: 3,
+  maxChildrenBiggestRoom: 0,
+  maxAdultsRoomMostAdults: 3,
+  maxChildrenRoomMostAdults: 0
+}
+
+var testC = {
+  rooms: [
+    [1],
+    [2],
+    [3],
+  ],
+  cleanRooms: [
+    [1,0],
+    [2,0],
+    [3,0],
+  ],
+  biggestRoom: [3,0],
+  roomMostAdults: [3,0],
+  maxPeople: 3,
+  maxAdultsBiggestRoom: 3,
+  maxChildrenBiggestRoom: 0,
+  maxAdultsRoomMostAdults: 3,
+  maxChildrenRoomMostAdults: 0
+}
+
+var testD = {
+  rooms: [
+    [3],
+    [2,1],
+    [1,2]
+  ],
+  cleanRooms: [
+    [3,0],
+    [2,1],
+    [1,2]
+  ],
+  biggestRoom: [3,0],
+  roomMostAdults: [3,0],
+  maxPeople: 3,
+  maxAdultsBiggestRoom: 3,
+  maxChildrenBiggestRoom: 0,
+  maxAdultsRoomMostAdults: 3,
+  maxChildrenRoomMostAdults: 0
+}
+
 const currentTest = testA;
 const occupancies = new Occupancy(currentTest.rooms)
 
