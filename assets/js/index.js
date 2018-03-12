@@ -20,6 +20,12 @@ Occupancy.prototype.biggestRoom = function(){
   return  this.list[biggestRoomIndex];
 }
 
+Occupancy.prototype._totalPeople = function(room){
+  return room.reduce(function(accumulator, currentValue){
+    return accumulator + currentValue
+  }, 0)
+}
+
 Occupancy.prototype._maxPeople = function(){
   var biggestRoom = this.biggestRoom()
   return biggestRoom[0] + biggestRoom[1];

@@ -27,6 +27,12 @@ describe('Occupancy', function() {
       assert.deepEqual(occupancies.biggestRoom(), [2,10])
     })
   })
+  describe('#_totalPeople', function(){
+    var occupancies = new Occupancy(rooms)
+    it('returns the sum of people in a room', function(){
+      assert.equal(occupancies._totalPeople([2,10]), 12)
+    })
+  })
   describe('#maxPeople', function(){
     var occupancies = new Occupancy(rooms)
     it('returns the max amount of peaple a room can hold as an integer', function(){
